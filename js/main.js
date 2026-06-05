@@ -1,35 +1,53 @@
-/* KSA ROOTS MARKET 2026 — main.js */
+/* KSA ROOTS MARKET 2026 — main.js  v2 */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── Falling Leaves (requires leaf-data.js) ────────────────
-  (function initLeaves() {
-    const canvas = document.getElementById('leafCanvas');
-    if (!canvas || typeof LEAF_DATA === 'undefined') return;
-    const N = 20;
-    for (let i = 0; i < N; i++) {
-      const idx  = Math.floor(Math.random() * LEAF_DATA.length);
-      const lf   = LEAF_DATA[idx];
-      const size = 22 + Math.random() * 22;
-      const left = Math.random() * 100;
-      const dur  = 8 + Math.random() * 10;
-      const delay = -(Math.random() * dur);
-      const drift = (Math.random() - 0.5) * 160;
+  // ── Hero: 落ち葉アニメーション ────────────────────────────
+  (function initHeroLeaves() {
+    const wrap = document.getElementById('heroLeaves');
+    if (!wrap) return;
 
-      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      svg.setAttribute('viewBox', `${-size/2} ${-size/2} ${size} ${size}`);
+    // KVカラーから抽出した緑系の色
+    const leafColors = [
+      '#029044','#42ad73','#60ba8a','#4eb4ab',
+      '#71c196','#5ab785','#81c8a2','#46af77'
+    ];
+
+    // 葉っぱ形状（SVGパス・原点中心の小さなパス）
+    const leafShapes = [
+      // 細長い葉
+      'M0,-12 C4,-8 6,0 4,8 C2,14 -2,14 -4,8 C-6,0 -4,-8 0,-12 Z',
+      // 丸みのある葉
+      'M0,-10 C6,-6 8,2 5,9 C2,14 -2,14 -5,9 C-8,2 -6,-6 0,-10 Z',
+      // 小さい葉
+      'M0,-8 C3,-5 4,0 3,6 C1,10 -1,10 -3,6 C-4,0 -3,-5 0,-8 Z',
+      // 逆向き
+      'M0,10 C-5,6 -6,-2 -3,-8 C0,-13 3,-11 4,-6 C6,0 5,6 0,10 Z',
+    ];
+
+    const N = 22;
+    for (let i = 0; i < N; i++) {
+      const color = leafColors[Math.floor(Math.random() * leafColors.length)];
+      const shape = leafShapes[Math.floor(Math.random() * leafShapes.length)];
+      const size  = 18 + Math.random() * 20;
+      const left  = Math.random() * 100;
+      const dur   = 9 + Math.random() * 11;
+      const delay = -(Math.random() * dur);
+      const drift = (Math.random() - 0.5) * 180;
+
+      const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+      svg.setAttribute('viewBox',`-15 -15 30 30`);
       svg.setAttribute('width', size);
       svg.setAttribute('height', size);
-      svg.setAttribute('overflow', 'visible');
+      svg.setAttribute('overflow','visible');
 
-      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      path.setAttribute('fill', lf.color);
-      path.setAttribute('transform', `translate(${-lf.x0},${-lf.y0})`);
-      path.setAttribute('d', lf.d);
+      const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+      path.setAttribute('fill', color);
+      path.setAttribute('d', shape);
       svg.appendChild(path);
 
       const wrapper = document.createElement('div');
-      wrapper.className = 'falling-leaf';
+      wrapper.className = 'hero-leaf';
       wrapper.style.cssText = [
         `left:${left.toFixed(1)}%`,
         `width:${size.toFixed(0)}px`,
@@ -39,52 +57,25 @@ document.addEventListener('DOMContentLoaded', () => {
         `animation-delay:${delay.toFixed(1)}s`,
       ].join(';');
       wrapper.appendChild(svg);
-      canvas.appendChild(wrapper);
+      wrap.appendChild(wrapper);
     }
   })();
 
-  // ── Light particles ───────────────────────────────────────
-  (function initParticles() {
-    const canvas = document.getElementById('leafCanvas');
-    if (!canvas) return;
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes particleFloat {
-        0%,100%{transform:translateY(0) scale(1);opacity:.4;}
-        50%{transform:translateY(-20px) scale(1.4);opacity:.9;}
-      }
-    `;
-    document.head.appendChild(style);
-    for (let i = 0; i < 20; i++) {
-      const d = document.createElement('div');
-      const sz = (2 + Math.random() * 3).toFixed(1);
-      d.style.cssText = [
-        'position:absolute',
-        'border-radius:50%',
-        'background:rgba(255,240,200,0.65)',
-        `width:${sz}px`,
-        `height:${sz}px`,
-        `left:${(Math.random() * 100).toFixed(1)}%`,
-        `top:${(Math.random() * 70).toFixed(1)}%`,
-        `animation:particleFloat ${(6 + Math.random() * 10).toFixed(1)}s ${(-Math.random() * 12).toFixed(1)}s ease-in-out infinite`,
-      ].join(';');
-      canvas.appendChild(d);
-    }
-  })();
-
-  // ── Header scroll state ───────────────────────────────────
+  // ── Header scroll state ────────────────────────────────────
   const header  = document.getElementById('siteHeader');
   const fabCta  = document.getElementById('fabCta');
   const heroSec = document.getElementById('hero-top');
 
   function onScroll() {
-    header && header.classList.toggle('scrolled', window.scrollY > 40);
-    fabCta  && fabCta.classList.toggle('show', window.scrollY > (heroSec?.offsetHeight || 400) * 0.5);
+    header && header.classList.toggle('scrolled', window.scrollY > 50);
+    if (fabCta && heroSec) {
+      fabCta.classList.toggle('show', window.scrollY > heroSec.offsetHeight * 0.55);
+    }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // ── Hamburger / Drawer ────────────────────────────────────
+  // ── Hamburger / Drawer ─────────────────────────────────────
   const hamburger = document.getElementById('hamburger');
   const drawer    = document.getElementById('mobileDrawer');
 
@@ -95,12 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = open ? 'hidden' : '';
   }
 
-  hamburger?.addEventListener('click', () => toggleDrawer(!drawer?.classList.contains('open')));
-
-  document.querySelectorAll('.drawer-link').forEach(a => {
-    a.addEventListener('click', () => toggleDrawer(false));
-  });
-
+  hamburger?.addEventListener('click', () =>
+    toggleDrawer(!drawer?.classList.contains('open'))
+  );
+  document.querySelectorAll('.drawer-link').forEach(a =>
+    a.addEventListener('click', () => toggleDrawer(false))
+  );
   document.addEventListener('click', e => {
     if (drawer?.classList.contains('open')
       && !drawer.contains(e.target)
@@ -109,25 +100,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ── Smooth scroll ─────────────────────────────────────────
+  // ── Smooth scroll (offset for fixed header) ────────────────
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const id = a.getAttribute('href').slice(1);
       const target = document.getElementById(id);
       if (!target) return;
       e.preventDefault();
-      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 56, behavior: 'smooth' });
+      window.scrollTo({
+        top: target.getBoundingClientRect().top + window.scrollY - 56,
+        behavior: 'smooth'
+      });
     });
   });
 
-  // ── Intersection Observer ─────────────────────────────────
+  // ── Intersection Observer ──────────────────────────────────
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });
-
   document.querySelectorAll('.promise-card, .flow-step').forEach(el => obs.observe(el));
 
-  // ── FAQ accordion ─────────────────────────────────────────
+  // ── FAQ accordion ──────────────────────────────────────────
   document.querySelectorAll('.faq-q').forEach(q => {
     q.addEventListener('click', () => {
       const item = q.closest('.faq-item');
