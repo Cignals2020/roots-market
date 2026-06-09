@@ -889,3 +889,233 @@ footer {
   .promise-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
   .promise-cards .promise-card:last-child { grid-column: 1 / -1; }
 }
+
+
+/* ============================================================
+   募集要項 チョーク内リスト
+   ============================================================ */
+.chalk-list {
+  list-style: none;
+  margin: 6px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.chalk-list li {
+  font-family: var(--font);
+  font-size: clamp(14px, 3.5vw, 16px);
+  color: rgba(255,255,255,.88);
+  line-height: 1.6;
+  padding-left: 18px;
+  position: relative;
+}
+.chalk-list li::before {
+  content: '・';
+  position: absolute;
+  left: 0;
+  color: rgba(246,181,48,.8);
+}
+
+/* ============================================================
+   食品系出店ノーティス
+   ============================================================ */
+.food-notice {
+  background: #fff;
+  border: 1.5px solid rgba(171,128,80,.22);
+  border-radius: 16px;
+  padding: 28px 26px;
+  margin-bottom: 32px;
+  box-shadow: 3px 4px 0 rgba(171,128,80,.1);
+}
+.food-notice-title {
+  font-family: var(--font);
+  font-size: clamp(17px, 4vw, 20px);
+  font-weight: 700;
+  color: var(--brown-dark);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.food-notice-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 1.2em;
+  background: var(--green);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.food-notice-lead {
+  font-family: var(--font);
+  font-size: var(--fs-sm);
+  color: var(--text-mid);
+  line-height: 1.75;
+  margin-bottom: 22px;
+}
+.food-rule {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+.food-rule-num {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+.food-rule-body {
+  flex: 1;
+}
+.food-rule-body strong {
+  font-family: var(--font);
+  font-size: var(--fs-base);
+  font-weight: 700;
+  color: var(--brown-dark);
+  display: block;
+  margin-bottom: 8px;
+}
+.food-rule-body p {
+  font-family: var(--font);
+  font-size: var(--fs-sm);
+  color: var(--text-mid);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.food-list {
+  list-style: none;
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.food-list li {
+  font-family: var(--font);
+  font-size: var(--fs-sm);
+  color: var(--text-mid);
+  line-height: 1.65;
+  padding-left: 18px;
+  position: relative;
+}
+.food-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-size: 11px;
+  top: 3px;
+}
+.food-list em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--brown-dark);
+}
+.food-caution {
+  font-family: var(--font);
+  font-size: var(--fs-sm);
+  color: #c0392b;
+  font-weight: 700;
+  background: rgba(192,57,43,.06);
+  border-left: 3px solid rgba(192,57,43,.5);
+  padding: 6px 12px;
+  border-radius: 0 6px 6px 0;
+  margin-top: 10px !important;
+}
+.food-other {
+  background: var(--sand-light);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-top: 4px;
+}
+.food-other-title {
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brown);
+  letter-spacing: .1em;
+  margin-bottom: 10px;
+}
+
+/* ============================================================
+   出店規約セクション
+   ============================================================ */
+.terms-section {
+  background: var(--sand);
+  padding: 96px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.terms-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green) 0%, var(--green-light) 50%, var(--gold) 100%);
+}
+.terms-list {
+  list-style: none;
+  counter-reset: terms-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 8px;
+}
+.terms-item {
+  counter-increment: terms-counter;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(171,128,80,.15);
+  font-family: var(--font);
+  font-size: var(--fs-base);
+  color: var(--text-mid);
+  line-height: 1.75;
+}
+.terms-item:last-child {
+  border-bottom: none;
+}
+.terms-item::before {
+  counter-increment: none;
+  content: counter(terms-counter);
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--slate);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+.terms-hashtags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.terms-tag {
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green);
+  background: var(--green-pale);
+  padding: 4px 12px;
+  border-radius: 40px;
+  border: 1px solid rgba(2,144,68,.2);
+  letter-spacing: .04em;
+}
