@@ -1,28 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>出店者募集 | KSA ROOTS MARKET 2026 Summer</title>
-  
-  <meta name="description" content="完成されたブランドじゃなくていい。ここは、あなたの「はじめの一歩」をみんなで育てる場所です。コザの夏の商店街で、応援が育つマーケット「KSA ROOTS MARKET 2026 Summer」の出店者募集ページです。">
-  
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://roots-market.koza.rocks/">
-  <meta property="og:title" content="出店者募集 | KSA ROOTS MARKET 2026 Summer">
-  <meta property="og:description" content="完成されたブランドじゃなくていい。ここは、あなたの「はじめの一歩」をみんなで育てる場所です。コザの夏の商店街で、応援が育つマーケットの出店者募集ページです。">
-  <meta property="og:site_name" content="KSA ROOTS MARKET 2026 Summer">
-  <meta property="og:image" content="https://roots-market.koza.rocks/images/KRM_OGP.jpg">
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="出店者募集 | KSA ROOTS MARKET 2026 Summer">
-  <meta name="twitter:description" content="完成されたブランドじゃなくていい。ここは、あなたの「はじめの一歩」をみんなで育てる場所です。">
-  <meta name="twitter:image" content="https://roots-market.koza.rocks/images/KRM_OGP.jpg">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出店者募集 | KSA ROOTS MARKET 2026 Summer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -56,7 +41,8 @@
       <li><a href="#flow">流れ</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#terms">出店規約</a></li>
-      <li><a href="#apply" class="header-cta">出店申し込み</a></li>
+      <li><a href="#apply" class="header-cta">出店する</a></li>
+      <li><a href="#sponsor" class="header-cta header-cta--sponsor">協賛する</a></li>
     </ul>
   </nav>
   <button class="hamburger" id="hamburger" aria-expanded="false" aria-label="メニュー">
@@ -78,20 +64,15 @@
     <li><a href="#faq"      class="drawer-link"><span class="nav-icon">FAQ</span>よくあるご質問</a></li>
     <li><a href="#terms"    class="drawer-link"><span class="nav-icon">Terms</span>出店規約</a></li>
   </ul>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8LHR9xfPPSpagFF0BZ3z4s0VRbM7hdtBdkN8jfV5G2PRSfw/viewform?usp=send_form" class="mobile-drawer-apply drawer-link" target="_blank" rel="noopener">出店申し込みはこちら</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8LHR9xfPPSpagFF0BZ3z4s0VRbM7hdtBdkN8jfV5G2PRSfw/viewform?usp=send_form" class="mobile-drawer-apply drawer-link" target="_blank" rel="noopener">出店する</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5qUIKvSNpWNRjtaFW7AdX3LIXJJ1Tiqu49ezzyYeYnj2zYw/viewform" class="mobile-drawer-apply mobile-drawer-sponsor drawer-link" target="_blank" rel="noopener">協賛する</a>
 </nav>
 
 <!-- FAB（モバイル用） -->
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSd8LHR9xfPPSpagFF0BZ3z4s0VRbM7hdtBdkN8jfV5G2PRSfw/viewform?usp=send_form" class="fab-cta" id="fabCta" target="_blank" rel="noopener" aria-label="出店申し込み">
-  <div class="fab-inner">
-    <svg class="fab-leaf" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M11,2 C15,2 20,5 20,11 C20,16 16,20 11,20 C6,20 2,16 2,11 C2,5 7,2 11,2 Z" fill="#3d7a4f" opacity=".9"/>
-      <path d="M11,3 Q11,11 11,19" stroke="rgba(255,255,255,.3)" stroke-width="1.5" fill="none"/>
-      <path d="M11,9 Q8,12 5,11" stroke="rgba(255,255,255,.2)" stroke-width="1" fill="none"/>
-    </svg>
-    出店申し込み
-  </div>
-</a>
+<div class="fab-dual" id="fabDual">
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8LHR9xfPPSpagFF0BZ3z4s0VRbM7hdtBdkN8jfV5G2PRSfw/viewform?usp=send_form" class="fab-dual-btn fab-dual-btn--apply" target="_blank" rel="noopener">出店する</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5qUIKvSNpWNRjtaFW7AdX3LIXJJ1Tiqu49ezzyYeYnj2zYw/viewform" class="fab-dual-btn fab-dual-btn--sponsor" target="_blank" rel="noopener">協賛する</a>
+</div>
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="hero-top">
@@ -139,10 +120,9 @@
     </div>
 
     <!-- CTA -->
-    <div class="hero-cta-wrap">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8LHR9xfPPSpagFF0BZ3z4s0VRbM7hdtBdkN8jfV5G2PRSfw/viewform?usp=send_form" class="btn-main" target="_blank" rel="noopener">
-        出店申し込みはこちら
-      </a>
+    <div class="hero-cta-wrap hero-cta-wrap--dual">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8LHR9xfPPSpagFF0BZ3z4s0VRbM7hdtBdkN8jfV5G2PRSfw/viewform?usp=send_form" class="btn-main btn-main--apply" target="_blank" rel="noopener">出店する</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5qUIKvSNpWNRjtaFW7AdX3LIXJJ1Tiqu49ezzyYeYnj2zYw/viewform" class="btn-main btn-main--sponsor" target="_blank" rel="noopener">協賛する</a>
     </div>
   </div>
 
@@ -416,6 +396,31 @@
     </div>
   </div>
 
+  <!-- キッチンカー案内 -->
+  <div class="food-truck-notice">
+    <h3 class="food-truck-title">
+      <span class="food-truck-icon">🚚</span>
+      フードトラック（キッチンカー）出店のご案内
+    </h3>
+    <p class="food-truck-lead">
+      食品系のキッチンカー出店につきましては、会場スペースの都合上、以下の通り制限を設けさせていただきます。<br>内容をご確認の上、ご応募ください。
+    </p>
+    <div class="food-truck-items">
+      <div class="food-truck-item">
+        <span class="food-truck-label">募集枠数</span>
+        <span class="food-truck-value">3枠（予定）<small>※先着順または選考</small></span>
+      </div>
+      <div class="food-truck-item">
+        <span class="food-truck-label">対象車両</span>
+        <span class="food-truck-value">小型車両限定（軽トラック・軽バン程度）</span>
+      </div>
+      <div class="food-truck-item food-truck-item--caution">
+        <span class="food-truck-label">注意事項</span>
+        <span class="food-truck-value">規定サイズ（軽自動車サイズ）を超える中型・大型車両での出店はできません。</span>
+      </div>
+    </div>
+  </div>
+
   <p class="section-body" style="font-size:17px;">前回（2026年1月）は約30組の出店者・800名以上の来場者が集まりました。商店街全体があたたかな熱気に包まれた一日となりました。</p>
   </div>
 </section>
@@ -456,6 +461,104 @@
           <div class="flow-step-desc">街の人と話し、応援を受け取り、つながりが生まれる一日に。出店後も個別相談で伴走します。</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== 応援で育つマーケット ===== -->
+<section class="support-section" id="sponsor">
+  <div class="container">
+    <div class="support-inner">
+      <div class="support-text">
+        <div class="section-label">Support</div>
+        <h2 class="section-title support-title">応援で育つ<br>マーケット。</h2>
+        <div class="hand-divider"></div>
+        <p class="section-body">
+          ROOTS MARKETは、地域の作り手や<br>小さなお店が挑戦できる場所です。<br><br>
+          この取り組みに共感いただける<br>企業・団体・個人の皆さまからの<br>協賛を募集しています。
+        </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5qUIKvSNpWNRjtaFW7AdX3LIXJJ1Tiqu49ezzyYeYnj2zYw/viewform" class="btn-sponsor-cta" target="_blank" rel="noopener">協賛する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 協賛プラン ===== -->
+<section class="plan-section" id="plan">
+  <div class="container">
+    <div class="section-label">Plan</div>
+    <h2 class="section-title">協賛プラン</h2>
+    <div class="hand-divider"></div>
+    <div class="plan-cards">
+
+      <!-- 3万円プラン -->
+      <div class="plan-card plan-card--premium">
+        <div class="plan-card-head">
+          <span class="plan-badge">限定 5 枠</span>
+          <h3 class="plan-price">3万円プラン</h3>
+        </div>
+        <ul class="plan-list">
+          <li>A2ポスター掲載</li>
+          <li>ダイジェスト映像掲載</li>
+          <li>マルシェチケット 3枚</li>
+          <li>SNS紹介</li>
+        </ul>
+        <div class="plan-deadline">申込期限：7月24日（金）まで</div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5qUIKvSNpWNRjtaFW7AdX3LIXJJ1Tiqu49ezzyYeYnj2zYw/viewform" class="plan-btn" target="_blank" rel="noopener">3万円プランで協賛する</a>
+      </div>
+
+      <!-- 1万円プラン -->
+      <div class="plan-card plan-card--standard">
+        <div class="plan-card-head">
+          <span class="plan-badge plan-badge--free">制限なし</span>
+          <h3 class="plan-price">1万円プラン</h3>
+        </div>
+        <ul class="plan-list">
+          <li>マルシェチケット 1枚</li>
+          <li>SNS紹介</li>
+        </ul>
+        <div class="plan-deadline">申込期限：イベント当日まで</div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5qUIKvSNpWNRjtaFW7AdX3LIXJJ1Tiqu49ezzyYeYnj2zYw/viewform" class="plan-btn plan-btn--sub" target="_blank" rel="noopener">1万円プランで協賛する</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 参加方法を選ぶ ===== -->
+<section class="join-section" id="join">
+  <div class="container">
+    <div class="section-label">Join</div>
+    <h2 class="section-title">参加方法を選ぶ</h2>
+    <div class="hand-divider"></div>
+    <div class="join-cards">
+
+      <div class="join-card join-card--apply">
+        <div class="join-card-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+            <path d="M16 28 C16 22 20 18 24 18 C28 18 32 22 32 28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="24" cy="15" r="3" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="join-card-title">出店したい</h3>
+        <p class="join-card-desc">地域のお客様へ商品やサービスを届けたい方へ。</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8LHR9xfPPSpagFF0BZ3z4s0VRbM7hdtBdkN8jfV5G2PRSfw/viewform?usp=send_form" class="join-btn join-btn--apply" target="_blank" rel="noopener">出店申込へ</a>
+      </div>
+
+      <div class="join-card join-card--sponsor">
+        <div class="join-card-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+            <path d="M24 14 L26.5 21 L34 21 L28 25.5 L30 32 L24 28 L18 32 L20 25.5 L14 21 L21.5 21 Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="join-card-title">協賛したい</h3>
+        <p class="join-card-desc">ROOTS MARKETの取り組みを応援したい方へ。</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5qUIKvSNpWNRjtaFW7AdX3LIXJJ1Tiqu49ezzyYeYnj2zYw/viewform" class="join-btn join-btn--sponsor" target="_blank" rel="noopener">協賛申込へ</a>
+      </div>
+
     </div>
   </div>
 </section>

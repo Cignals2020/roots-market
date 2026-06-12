@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Header scroll state ────────────────────────────────────
   const header  = document.getElementById('siteHeader');
   const fabCta  = document.getElementById('fabCta');
+  const fabDual = document.getElementById('fabDual');
   const heroSec = document.getElementById('hero-top');
 
   function onScroll() {
